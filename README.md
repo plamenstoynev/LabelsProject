@@ -68,9 +68,9 @@ This project provides a set of classes and decorators for managing and transform
     - Enables interchangeable text transformation logic through objects such as `Capitalize`, `Trim`, and `NormalizeSpaces`.
     - Facilitates flexible and reusable transformation implementations.
 
-4 **Composite Pattern**:
-    - Used in `CompositeTransformation` to treat single and multiple transformations uniformly.
-    - Allows sequential application of multiple transformations on text.
+4. **Composite Pattern**: 
+    - Used in `CompositeTransformation` to treat single and composite transformations uniformly.
+    - Allows sequential application of multiple transformations.
 ---
 
 ## File Overview
