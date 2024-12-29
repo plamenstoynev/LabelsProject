@@ -16,7 +16,12 @@ public:
         if (text.empty()) return text;
 
         std::string result = text;
-        if (std::isalpha(result[0])) result[0] = std::toupper(result[0]);
+        size_t index = 0;
+        while (!isalpha(result[index])) {
+            index++;
+        }
+
+        result[index] = std::toupper(result[index]);
 
         return result;
     }
