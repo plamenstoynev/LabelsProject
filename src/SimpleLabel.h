@@ -1,7 +1,7 @@
 #pragma once
-#include "Label.h"
+#include "LabelImp.h"
 
-class SimpleLabel : public Label {
+class SimpleLabel : public LabelImpl {
 private:
     std::string text;
 

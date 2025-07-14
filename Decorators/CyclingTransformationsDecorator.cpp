@@ -1,6 +1,6 @@
 #include "CyclingTransformationsDecorator.h"
 
-CyclingTransformationsDecorator::CyclingTransformationsDecorator(Label *label, std::vector<std::unique_ptr<Transformation>>&& transformations_) : LabelDecoratorBase(label), transformations(std::move(transformations_)) {
+CyclingTransformationsDecorator::CyclingTransformationsDecorator(LabelImpl *label, std::vector<std::unique_ptr<Transformation>>&& transformations_) : LabelDecoratorBase(label), transformations(std::move(transformations_)) {
     if (this->transformations.empty()) throw std::invalid_argument("Transformations cannot be empty");
 }
 

@@ -40,4 +40,3 @@ void ProxyLabel::checkTimeout() const {
         }
     }
 }
-

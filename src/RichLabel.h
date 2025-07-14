@@ -1,5 +1,5 @@
 #pragma once
-#include "Label.h"
+#include "LabelImp.h"
 
 enum Color {
     RED,
@@ -7,7 +7,7 @@ enum Color {
     BLUE
 };
 
-class RichLabel : public Label {
+class RichLabel : public LabelImpl {
 private:
     std::string text;
     Color color;

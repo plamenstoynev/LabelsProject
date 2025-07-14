@@ -7,6 +7,6 @@ private:
     std::vector<std::unique_ptr<Transformation>> transformations;
     mutable size_t currentTransformationIndex = 0;
 public:
-    CyclingTransformationsDecorator(Label *label, std::vector<std::unique_ptr<Transformation>>&& transformations);
+    CyclingTransformationsDecorator(LabelImpl *label, std::vector<std::unique_ptr<Transformation>>&& transformations);
     std::string getText() const override;
 };

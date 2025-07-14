@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-#include "Label.h"
+#include "LabelImp.h"
 
-class ProxyLabel : public Label {
+class ProxyLabel : public LabelImpl {
 private:
     mutable std::string text;
     mutable bool isLoaded = false;

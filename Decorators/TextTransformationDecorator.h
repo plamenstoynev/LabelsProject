@@ -6,6 +6,6 @@ class TextTransformationDecorator : public LabelDecoratorBase{
 private:
     std::unique_ptr<Transformation> transformation;
 public:
-    TextTransformationDecorator(Label* label,std::unique_ptr<Transformation>transformation);
+    TextTransformationDecorator(LabelImpl* label,std::unique_ptr<Transformation>transformation);
     std::string getText() const override;
 };

@@ -3,8 +3,8 @@
 
 class LabelPrinter {
 private:
-    std::unique_ptr<Label> label;
+    std::unique_ptr<LabelImpl> label;
 public:
-    LabelPrinter(std::unique_ptr<Label> label);
+    LabelPrinter(std::unique_ptr<LabelImpl> label);
     void print() const;
 };

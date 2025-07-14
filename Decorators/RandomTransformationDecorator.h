@@ -7,6 +7,6 @@ class RandomTransformationDecorator : LabelDecoratorBase {
 private:
     std::vector<std::unique_ptr<Transformation>> transformations;
 public:
-    RandomTransformationDecorator(Label *label,  std::vector<std::unique_ptr<Transformation>> transformations);
+    RandomTransformationDecorator(LabelImpl *label,  std::vector<std::unique_ptr<Transformation>> transformations);
     std::string getText() const override;
 };
