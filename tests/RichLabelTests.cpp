@@ -12,3 +12,10 @@ TEST_CASE("GetTextReturnsTextRichLabel") {
     RichLabel label("Hello", RED, 12, "Arial");
     REQUIRE(label.getText() == "Hello");
 }
+
+TEST_CASE("RichLabelHelpText"){
+    RichLabel label("Hello", RED, 12, "Arial");
+    REQUIRE(label.isHelpTextAvailable() == false);
+    REQUIRE(label.getHelpText() == nullptr);
+}
+

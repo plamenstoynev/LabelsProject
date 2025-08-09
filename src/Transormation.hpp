@@ -2,7 +2,6 @@
 #include <locale>
 #include <regex>
 #include <utility>
-#include "Label.h"
 
 class Transformation {
 public:

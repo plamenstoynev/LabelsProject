@@ -11,3 +11,9 @@ TEST_CASE("GetTextReturnsTextSimpleLabel") {
     SimpleLabel label("Hello");
     REQUIRE(label.getText() == "Hello");
 }
+
+TEST_CASE("HelpTextInSimpleLabel"){
+    SimpleLabel label("Hello");
+    REQUIRE(label.isHelpTextAvailable() == false);
+    REQUIRE(label.getHelpText() == nullptr);
+}
