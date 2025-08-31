@@ -4,6 +4,14 @@ LabelDecoratorBase::LabelDecoratorBase(LabelImpl *label) : label(label) {
     if (!label) throw std::invalid_argument("Label cannot be null");
 }
 
+LabelDecoratorBase::~LabelDecoratorBase() {
+    // own the inner label and delete it (if still present)
+    if (label) {
+        delete label;
+        label = nullptr;
+    }
+}
+
 std::string LabelDecoratorBase::getText() const {
     return label->getText();
 }
@@ -84,7 +92,7 @@ std::string DecorateDecorator::getText() const {
     return decorate.applyFix(text);
 }
 
-CensorDecorator::CensorDecorator(LabelImpl *label, std::string word) : LabelDecoratorBase(label), censor(word) {}
+CensorDecorator::CensorDecorator(LabelImpl *label, const std::string &word) : LabelDecoratorBase(label), censor(word) {}
 
 std::string CensorDecorator::getText() const {
     std::string text = LabelDecoratorBase::getText();
@@ -95,7 +103,7 @@ std::string CensorDecorator::getText() const {
     return censor.applyFix(text);
 }
 
-ReplaceDecorator::ReplaceDecorator(LabelImpl *label, std::string word, std::string replacement) : LabelDecoratorBase(label), replace(word, replacement) {}
+ReplaceDecorator::ReplaceDecorator(LabelImpl *label, const std::string &word, const std::string &replacement) : LabelDecoratorBase(label), replace(word, replacement) {}
 
 std::string ReplaceDecorator::getText() const {
     std::string text = LabelDecoratorBase::getText();

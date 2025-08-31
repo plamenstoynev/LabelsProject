@@ -10,7 +10,7 @@ public:
     std::string getText() const override;
     LabelImpl* removeDecorator(const std::type_info& typeOfDecorator) override;
     LabelImpl* removeDecoratorFrom(LabelImpl* label, const std::type_info& typeOfDecorator) override;
-    ~LabelDecoratorBase() override = default;
+    ~LabelDecoratorBase() override;
 };
 
 
@@ -58,7 +58,7 @@ class CensorDecorator : public LabelDecoratorBase {
 private:
     Censor censor;
 public:
-    explicit CensorDecorator(LabelImpl* label, std::string word);
+    explicit CensorDecorator(LabelImpl* label, const std::string& word);
     std::string getText() const override;
 };
 
@@ -66,6 +66,6 @@ class ReplaceDecorator : public LabelDecoratorBase {
 private:
     Replace replace;
 public:
-    explicit  ReplaceDecorator(LabelImpl* label, std::string from, std::string to);
+    explicit ReplaceDecorator(LabelImpl* label, const std::string& from, const std::string& to);
     std::string getText() const override;
 };

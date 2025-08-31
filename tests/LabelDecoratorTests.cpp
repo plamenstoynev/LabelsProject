@@ -15,7 +15,6 @@ TEST_CASE("GetTextReturnsTextFromLabel") {
     LabelImpl *label = new SimpleLabel("Hello");
     LabelDecoratorBase decorator(label);
     REQUIRE(decorator.getText() == "Hello");
-    delete label;
 }
 
 TEST_CASE("RandomTransformationConstructor") {
@@ -41,7 +40,6 @@ TEST_CASE("GetTextReturnsTextFromRandomTransformationDecorator") {
     REQUIRE((decorator.getText() == "Hello" ||
             decorator.getText() == "hello" ||
             decorator.getText() == "Hello "));
-    delete label;
 }
 
 TEST_CASE("TextTransformationConstructor") {
@@ -56,7 +54,6 @@ TEST_CASE("GetTextReturnsTextFromTextTransformationDecorator") {
     LabelImpl *label = new RichLabel("hello", RED, 12, "Arial");
     TextTransformationDecorator decorator(label, std::move(transformation));
     REQUIRE(decorator.getText() == "Hello");
-    delete label;
 }
 
 TEST_CASE("CyclingTransformationsDecoratorConstructor") {
@@ -78,5 +75,4 @@ TEST_CASE("GetTextReturnsTextFromCyclingTransformationsDecorator") {
     LabelImpl *label = new SimpleLabel("hello");
     CyclingTransformationsDecorator decorator(label, std::move(transformations));
     REQUIRE(decorator.getText() == "Hello");
-    delete label;
 }

@@ -14,6 +14,4 @@ TEST_CASE("TestRemoveDecorator") {
 
     CyclingTransformationsDecorator decorator(label, std::move(transformations));
     REQUIRE_NOTHROW(decorator.removeDecorator(typeid(Capitalize)));
-
-    delete label;
 }
